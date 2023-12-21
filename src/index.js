@@ -1,10 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  getDocs,
-} from "firebase/firestore";
+import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD0MWh2PFruua4VOpeB7ybNMx4vRSQH-SE",
@@ -25,35 +20,32 @@ const data = {
 };
 
 let startTime = null;
-let formLoaded = false; 
-
+let formLoaded = false;
 
 document.addEventListener("DOMContentLoaded", function () {
   const logowanie = document.getElementById("logowanie");
   const rejestracja = document.getElementById("rejestracja");
 
-
   if (logowanie) {
     logowanie.addEventListener("click", function () {
       window.location.href = "login.html";
     });
-  }if (rejestracja) {
+  }
+  if (rejestracja) {
     rejestracja.addEventListener("click", function () {
       window.location.href = "register.html";
     });
   } else {
-    console.error("Element o identyfikatorze 'przycisk' nie został odnaleziony.");
+    console.error(
+      "Element o identyfikatorze 'przycisk' nie został odnaleziony."
+    );
   }
 
   formLoaded = true;
-  
 });
-
-
 
 const buttons = document.querySelectorAll(".btn");
 const registerBtn = document.getElementById("zarejestruj");
-
 
 document.addEventListener("DOMContentLoaded", function () {
   formLoaded = true;
@@ -114,8 +106,6 @@ if (registerBtn) {
 const colRef = collection(db, "biometryczne");
 const loginBtn = document.getElementById("zaloguj");
 
-
-
 const wynikDiv = document.getElementById("wynik");
 
 if (loginBtn) {
@@ -135,7 +125,7 @@ if (loginBtn) {
         const tolerance = {
           clicksX: 1000,
           clicksY: 1000,
-          timeBetween: 2000,
+          timeBetween: 200,
           totalTime: 100,
         };
 
@@ -146,17 +136,17 @@ if (loginBtn) {
 
         const clicksMatch = data.clicks.every((click, index) => {
           const bookClick = books[0].clicks[index];
-          
-          if (click && bookClick) {  
+
+          if (click && bookClick) {
             return (
               String(click.id) === String(bookClick.id) &&
               Math.abs(click.x - bookClick.x) <= tolerance.clicksX &&
               Math.abs(click.y - bookClick.y) <= tolerance.clicksY
             );
-        }
+          }
 
-        return false;
-      });
+          return false;
+        });
 
         const timeBetweenMatch =
           Math.abs(data.timeBetween[0] - books[0].timeBetween[0]) <=
