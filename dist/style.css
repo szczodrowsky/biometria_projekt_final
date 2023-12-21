@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Oxygen&display=swap');
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Serif Display', serif;
+    letter-spacing: 1px;
+}
+section
+{
+    width: 100%;
+    height: 100vh;
+    background: url(logo.png); 
+    background-size: cover;
+    
+}
+.flex-container
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 900px;
+    height: 450px;
+    background: rgba(175, 192, 215, 0.95);
+
+}
+h2
+{
+    font-size: 25px;
+    
+}
+h3
+{
+    
+    font-size: 15px;
+
+}
+
+.flex-container .form_content,
+.flex-container .login_form
+{
+    position: relative;
+    width: 50%;
+    height: 450px;
+    float: left;
+    box-sizing: border-box;
+}
+.flex-container .form_content
+{
+    text-align: center ;
+    padding: 40px 30px;
+    color: rgb(254, 255, 255);
+    background: rgba(135, 56, 61, .7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    ;
+}
+.flex-container .login_form 
+{
+    padding: 40px 30px;
+    text-align: center ;
+    color: rgba(22, 67, 86, 1);
+    /* color: rgba(21, 102, 105, 1); */
+    background: #fff;
+    height: 480px;
+    top:-15px;
+    box-shadow: -20px 0 15px rgba(0, 0, 0, .8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+button {
+   
+    display: inline-block;
+    width: 48%;
+    margin: 2%;
+    padding: 15px;
+    background-color: #ffffff;
+    border: none;
+    color: #000000;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #f2f2f2; /* Zmiana koloru tła po najechaniu myszką */
+    background-size: cover;
+}
+button.click
+{
+    background-color: #000000;
+}
+
+.numeric-keyboard 
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.login-page
+{
+    margin-top: auto;
+    margin-bottom: auto;
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#wynik {
+    
+    color: #000; /* Kolor tekstu */
+    font-size: 16px; /* Rozmiar tekstu */
+    display: block;
+    border: 1px solid red;
+  }
+  
